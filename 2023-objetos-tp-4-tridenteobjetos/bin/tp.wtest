@@ -1,0 +1,48 @@
+import tp.*
+
+describe "Poderes"{
+	test "el poder de KataraNovata con su Habilidad de 4 y el poder de la luna a 100 es 504 " {
+		const kataraNovata = new MaestroAgua(habilidad = 4)
+		luna.intensidadLuna(100)
+		assert.equals(504, kataraNovata.calcularPoder())
+	}
+	test "el poder de KataraExperta con su Habilidad de 8 y el poder de la luna a 300 es 1508 " {
+		const kataraExperta = new MaestroAgua(habilidad = 8)
+		luna.intensidadLuna(300)
+		assert.equals(1508, kataraExperta.calcularPoder())
+		
+	}
+	test "el poder de SukoNovato con su Habilidad de 6 y su rabia de 10000 y locura de 200 es 50 " {
+		const sukoNovato = new MaestroFuego(habilidad = 6, rabia = 10000, locura = 200)
+		assert.equals(50, sukoNovato.calcularPoder())
+	}
+	test "el poder de AangNovato con su Habilidad de 5, su ligereza de 50 y su mascota Momo de poder 10 es 50 " {
+		const momo = new Mascota(poderMascota = 10)
+		const aangNovato = new MaestroAire(habilidad = 5, ligereza = 50, mascota = momo)
+		assert.equals(500, aangNovato.calcularPoder())	
+	}
+	test "el poder de Tarriok con su Habilidad de 10 y el poder de la luna a 200 es 2020 " {
+		const tarriok = new MaestroSangre(habilidad = 10)
+		luna.intensidadLuna(200)
+		assert.equals(2020, tarriok.calcularPoder())
+	}
+	
+}
+describe "EsGroso"{
+	test "AangNovato no es groso"{
+		const momo = new Mascota(poderMascota = 10)
+		const aangNovato = new MaestroAire(habilidad = 5, ligereza = 50, mascota = momo)
+		assert.equals(false, aangNovato.esGroso())
+	}
+	test "sukoExperto es groso"{
+		const sukoExperto = new MaestroFuego(habilidad = 9, rabia = 5000, locura = 2)
+		assert.equals(true, sukoExperto.esGroso())
+	}
+	test "AangNovato no es groso"{
+		const momo = new Mascota(poderMascota = 10)
+		const aangExperto = new MaestroAire(habilidad = 10, ligereza = 500, mascota = momo)
+		assert.equals(true, aangExperto.esGroso())
+	}
+}
+
+
